@@ -170,6 +170,26 @@ console.log(whatDayIsIt());
   }
 */
 
+function dice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+function rollTheDices(num) {
+  var sum = 0;
+  var values = [];
+
+  for (var i = 0; i < num; i++) {
+      var result = dice(); 
+      sum += result; 
+      values.push(result); 
+  }
+  return {
+      sum: sum,
+      values: values
+  };
+}
+
+console.log(rollTheDices(3)); 
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
@@ -185,6 +205,15 @@ console.log(`Dal 2024-06-12 sono passati  ${daysPassed} giorni`);
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+  // Confronta giorno, mese e anno per determinare se è il tuo compleanno oggi
+  function isTodayMyBirthday() {
+    let today = new Date();
+    let birthdayMonth = 9; 
+    let birthdayDay = 31; 
+    return (today.getDate() === birthdayDay && today.getMonth() === birthdayMonth);
+}
+
+console.log(isTodayMyBirthday()); 
 
 // Arrays & Oggetti
 
